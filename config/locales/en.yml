@@ -35,3 +35,14 @@ en:
         success: "You are now logged out"
       authorization:
         error: "Please sign in to view that page."
+  note:
+    flash:
+      create:
+        success: "Your note has been created!"
+        failure: "There was a problem creating your note."
+      update:
+        success: "Saved!"
+        failure: "There was a problem saving your changes."
+      destroy:
+        success: "Your note has been removed!"
+        error: "There was a problem removing that note"
