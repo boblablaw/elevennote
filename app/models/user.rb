@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :password, length: { minimum: 8 }
   has_many :notes
+
+  def display_name
+    name.presence || username
+  end
 end
