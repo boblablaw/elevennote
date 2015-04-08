@@ -5,7 +5,7 @@ class NotesController < ApplicationController
   def show
     render :edit
   end
-  
+
   def new
     @note = Note.new
   end
@@ -42,6 +42,7 @@ class NotesController < ApplicationController
       flash[:notice] = t("note.flash.#{action_name}.success")
     else
       flash.now[:alert] = t("note.flash.#{action_name}.failure")
+    end
   end
 
   def render_or_redirect
@@ -50,4 +51,5 @@ class NotesController < ApplicationController
     else
       redirect_to @note
     end
+  end
 end
