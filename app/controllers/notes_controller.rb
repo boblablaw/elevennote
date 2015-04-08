@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :authorize_user
   before_action :find_note, only: [:show, :edit, :update, :destroy]
+  before_action :load_notes
 
   def show
     render :edit
@@ -35,6 +36,10 @@ class NotesController < ApplicationController
 
   def find_note
     @note = Note.find params[:id]
+  end
+
+  def load_notes
+    @notes = Note.all
   end
 
   def set_flash_for(action_result)
