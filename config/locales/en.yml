@@ -44,5 +44,5 @@ en:
         success: "Saved!"
         failure: "There was a problem saving your changes."
       destroy:
-        success: "Your note has been removed!"
-        error: "There was a problem removing that note"
+        success: "That note has been deleted."
+        failure: "We weren't able to delete that note."
