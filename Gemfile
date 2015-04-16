@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+gem 'bootsy'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

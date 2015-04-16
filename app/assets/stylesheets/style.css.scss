@@ -127,3 +127,9 @@ ul#notes {
 span.login {
   margin-left: 1em;
 }
+#sidebar {
+  position: absolute;
+  width: 95%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
