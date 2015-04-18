@@ -18,11 +18,19 @@ class API::V1::NotesController < API::APIController
   end
 
   def update
-    @note.update(note_params)
+    if @note.update(note_params)
+      render :show
+    else
+      render json: @note.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @note.destroy
+    if @note.destroy
+      render json: { message: 'Deleted Successfully' }
+    else
+      render json: @note.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -32,7 +40,7 @@ class API::V1::NotesController < API::APIController
   end
 
   def find_note
-    @note = current_user.notes.find params[:id]
+    @note = current_api_user.notes.find params[:id]
   end
 
 end
