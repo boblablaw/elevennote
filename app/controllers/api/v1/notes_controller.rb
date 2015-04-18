@@ -1,11 +1,11 @@
 class API::V1::NotesController < API::APIController
   before_action :authorize_api_key
+  before_action :find_note, only: [:show, :update, :destroy]
   def index
     @notes = current_api_user.notes.ordered
   end
 
   def show
-    @note = current_api_user.notes.find params[:id]
   end
 
   def create
@@ -17,9 +17,22 @@ class API::V1::NotesController < API::APIController
     end
   end
 
+  def update
+    @note.update(note_params)
+  end
+
+  def destroy
+    @note.destroy
+  end
+
   private
 
   def note_params
     params.require(:note).permit(:title, :body_html)
   end
+
+  def find_note
+    @note = current_user.notes.find params[:id]
+  end
+
 end
