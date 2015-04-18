@@ -16,4 +16,10 @@ class API::V1::NotesController < API::APIController
       render json: note.errors, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def note_params
+    params.require(:note).permit(:title, :body_html)
+  end
 end

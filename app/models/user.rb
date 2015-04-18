@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     name.presence || username
   end
 
-  private
+  # private
 
   def generate_api_key
     self.api_key = BCrypt::Password.create(password_digest)
