@@ -12,7 +12,7 @@ class Note
   resizeElements: ->
     $(window).resize( ->
       $('#sidebar').height $(window).height() - 55
-      $('.bootsy_text_area').height $(window).height() - 260
+      $('.bootsy_text_area').height $(window).height() - 300
     ).trigger 'resize'
 
   setupAPIKeyEvents: ->

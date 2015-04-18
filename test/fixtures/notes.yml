@@ -4,8 +4,19 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+# one: {}
 # column: value
 #
-two: {}
+# two: {}
 #  column: value
+groceries:
+  user: dave
+  title: Groceries
+  body_text: 'milk, eggs, cheese'
+  body_html: '<ul><li>milk</li><li>eggs</li><li>cheese</li></ul>'
+
+todo:
+  user: dave
+  title: 'Todo'
+  body_text: 'Feed the dogs'
+  body_html: '<p>Feed the dogs</p>'
